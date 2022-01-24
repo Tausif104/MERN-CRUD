@@ -1,0 +1,15 @@
+.mt-50 {
+	margin-top: 50px;
+}
+.mb-100 {
+	margin-bottom: 100px;
+}
+
+.link-danger {
+	cursor: pointer;
+}
+
+.note-details h1 {
+	font-weight: 900;
+	font-size: 80px;
+}
