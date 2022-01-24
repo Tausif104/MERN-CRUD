@@ -4,9 +4,21 @@ const Note = require('../models/Note')
 
 // GET all
 router.get('/', async (req, res) => {
-	const notes = await Note.find({})
+	const count = await Note.count()
+
+	const page = req.query.page
+	const size = req.query.size
+	let notes
+	if (page) {
+		notes = await Note.find()
+			.skip(page * size)
+			.limit(size)
+	} else {
+		notes = await Note.find({})
+	}
+
 	if (notes.length > 0) {
-		res.json(notes)
+		res.json({ notes, count })
 	} else {
 		res.json({ msg: 'No Notes Found' })
 	}

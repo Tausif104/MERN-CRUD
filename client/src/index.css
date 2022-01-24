@@ -13,3 +13,8 @@
 	font-weight: 900;
 	font-size: 80px;
 }
+
+.h-500 {
+	min-height: 500px;
+	max-height: 500px;
+}
