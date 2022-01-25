@@ -19,7 +19,7 @@ const AddNotePage = () => {
 			desc: descRef.current.value,
 			author: authorRef.current.value,
 		}
-		fetch('http://localhost:5000/api/notes', {
+		fetch('https://crud-td.herokuapp.com/api/notes', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

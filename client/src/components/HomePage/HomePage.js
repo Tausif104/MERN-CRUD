@@ -9,13 +9,13 @@ const HomePage = () => {
 	const [alert, setAlert] = useState()
 	const [page, setPage] = useState(0)
 	const [pageCount, setPageCount] = useState(0)
-	const notesPerPage = 2
+	const notesPerPage = 10
 
 	useEffect(() => {
 		setLoading(true)
 
 		fetch(
-			`http://localhost:5000/api/notes?page=${page}&&size=${notesPerPage}`
+			`https://crud-td.herokuapp.com/api/notes?page=${page}&&size=${notesPerPage}`
 		)
 			.then((res) => res.json())
 			.then((data) => {
@@ -32,7 +32,7 @@ const HomePage = () => {
 	}, [page])
 
 	const handleDelete = (_id) => {
-		fetch(`http://localhost:5000/api/notes/${_id}`, {
+		fetch(`https://crud-td.herokuapp.com/api/notes/${_id}`, {
 			method: 'DELETE',
 			headers: {
 				'Content-Type': 'application/json',

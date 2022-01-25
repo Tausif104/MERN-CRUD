@@ -7,7 +7,7 @@ const UpdateNotePage = () => {
 	const history = useHistory()
 
 	useEffect(() => {
-		fetch(`http://localhost:5000/api/notes/${id}`)
+		fetch(`https://crud-td.herokuapp.com/api/notes/${id}`)
 			.then((res) => res.json())
 			.then((data) => setNote(data))
 	}, [])
@@ -44,7 +44,7 @@ const UpdateNotePage = () => {
 
 	const handleEditNote = (e) => {
 		e.preventDefault()
-		fetch(`http://localhost:5000/api/notes/edit/${id}`, {
+		fetch(`https://crud-td.herokuapp.com/api/notes/edit/${id}`, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
@@ -66,6 +66,7 @@ const UpdateNotePage = () => {
 						<h3 className='mb-3'>Edit Note</h3>
 						<form className='mb-4' onSubmit={handleEditNote}>
 							<div className='form-group mb-3'>
+								{console.log(note)}
 								<input
 									onChange={handleTitle}
 									value={note.title || ''}

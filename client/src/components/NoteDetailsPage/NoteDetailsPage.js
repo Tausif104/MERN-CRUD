@@ -12,7 +12,7 @@ const NoteDetailsPage = () => {
 	useEffect(() => {
 		setLoading(true)
 
-		fetch(`http://localhost:5000/api/notes/${id}`)
+		fetch(`https://crud-td.herokuapp.com/api/notes/${id}`)
 			.then((res) => res.json())
 			.then((data) => [setNote(data), setLoading(false)])
 	}, [])

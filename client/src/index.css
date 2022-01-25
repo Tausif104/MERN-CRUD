@@ -17,6 +17,5 @@
 }
 
 .h-500 {
-	min-height: 500px;
-	max-height: 500px;
+	min-height: 80vh;
 }
